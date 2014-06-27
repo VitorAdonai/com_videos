@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_VIDEOS_FORM_LBL_ITENS_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_VIDEOS_FORM_LBL_ITENS_CREATED_BY"
+            description="COM_VIDEOS_FORM_DESC_ITENS_CREATED_BY"  /> 
+
+       <field name="nome" type="text"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_NOME"
+            description="COM_VIDEOS_FORM_DESC_ITENS_NOME" 
+                
+                
+                 required="true"  /> 
+
+       <field name="video" type="media"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_VIDEO"
+            description="COM_VIDEOS_FORM_DESC_ITENS_VIDEO" 
+                
+                
+                 required="true" 
+            directory="images" /> 
+
+       <field name="imagem" type="media"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_IMAGEM"
+            description="COM_VIDEOS_FORM_DESC_ITENS_IMAGEM" 
+                
+                
+                 required="true" 
+            directory="images" /> 
+
+       <field name="hits" type="list"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_HITS"
+            description="COM_VIDEOS_FORM_DESC_ITENS_HITS" 
+                
+                
+                
+            multiple="false">
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+        </field> 
+
+ 
+		<field name="filter_hits" type="list" onchange="this.form.submit();">
+			<option value="">COM_VIDEOS_ITENSS_HITS_FILTER</option>
+			<option value="true">Sim</option>
+			<option value="false">Não</option>
+		</field> 
+
+       <field name="showautor" type="list"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_SHOWAUTOR"
+            description="COM_VIDEOS_FORM_DESC_ITENS_SHOWAUTOR" 
+                
+                
+                 required="true" 
+            multiple="false">
+                <option value="true">Sim</option>
+                <option value="false">No</option>
+        </field> 
+
+ 
+		<field name="filter_showautor" type="list" onchange="this.form.submit();">
+			<option value="">COM_VIDEOS_ITENSS_SHOWAUTOR_FILTER</option>
+			<option value="true">Sim</option>
+			<option value="false">No</option>
+		</field> 
+
+       <field name="comentarios" type="list"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_COMENTARIOS"
+            description="COM_VIDEOS_FORM_DESC_ITENS_COMENTARIOS" 
+                
+                
+                >
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+        </field> 
+
+       <field name="width" type="text"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_WIDTH"
+            description="COM_VIDEOS_FORM_DESC_ITENS_WIDTH" 
+                 default="px ou %" 
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw" /> 
+
+       <field name="height" type="text"
+                
+            label="COM_VIDEOS_FORM_LBL_ITENS_HEIGHT"
+            description="COM_VIDEOS_FORM_DESC_ITENS_HEIGHT" 
+                 default="px ou %" 
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" /> 
+
+ </fieldset> 
+
+ <fieldset 
+                        name="accesscontrol">
+                       <field name="asset_id" type="hidden" filter="unset" />
+                       <field name="rules"
+                            type="rules"
+                            label="JFIELD_RULES_LABEL"
+                            translate_label="false"
+                            filter="rules"
+                            validate="rules"
+                            class="inputbox"
+                            component="com_videos"
+                            section="itens"
+                        />
+
+	</fieldset>
+
+</form>
